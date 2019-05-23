@@ -48,12 +48,9 @@ def savePicToDynamodb(body, region='us-east-2'):
             label=label.lower()
             label='#'+label
             hashtags[label] = label
-    # i=0
     for tag in hashtags:
         taggy = tag
         hashing[taggy]= {'S' : tag}
-        # i+=1
-        # hashtags[tag] = 
         
         
     tags = {'M':hashing}
@@ -112,7 +109,7 @@ def savePicToDynamodb(body, region='us-east-2'):
     clientDynamodb = boto3.client('dynamodb', 'us-east-2')
     
     response = clientDynamodb.update_item(
-        TableName = 'comexamplebriannatur-mobilehub-577193899-pictures',
+        TableName = 'comexamplebriannatur-mobilehub-********-pictures',
         Key={
             'userId': userId,
             'pictureId' : pictureId
